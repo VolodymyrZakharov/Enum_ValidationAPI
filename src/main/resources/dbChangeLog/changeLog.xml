@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1" author="me">
+        <createTable tableName="project">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="project_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_on" type="varchar(255)"/>
+
+            <column name="updated_on" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="task">
+            <column type="bigint" name="id" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="task_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="days_to_complete" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="task_status" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_on" type="varchar(255)"/>
+
+            <column name="updated_on" type="varchar(255)"/>
+
+            <column name="project_id" type="bigint">
+                <constraints referencedTableName="project"
+                             referencedColumnNames="id"
+                             foreignKeyName="PROJECT_PROJECT_ID_TASK_ID"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
