@@ -49,4 +49,20 @@
 
     </changeSet>
 
+    <changeSet id="2" author="me">
+
+    <createTable tableName="task_status">
+        <column name="id" type="bigint" autoIncrement="true">
+            <constraints primaryKey="true"/>
+        </column>
+
+        <column name="enum" type="varchar(255)"/>
+
+        <column name="integer_value" type="bigint"/>
+
+        <column name="string_value" type="varchar(255)"/>
+    </createTable>
+
+    </changeSet>
+
 </databaseChangeLog>

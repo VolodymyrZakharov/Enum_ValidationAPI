@@ -92,16 +92,6 @@ public class TaskServiceImpl implements TaskService {
 
     }
 
-    @Override
-    public List<TaskResponseDTO> findAll(Long projectId) {
-        var tasks = taskRepository.findAllByProjectId(projectId);
-
-       return tasks.stream()
-                .map(x -> taskToDTO(x, projectId))
-                .collect(Collectors.toList());
-    }
-
-
     private TaskResponseDTO taskToDTO(Task task, Long projectId) {
         return TaskResponseDTO.builder()
                 .id(task.getId())

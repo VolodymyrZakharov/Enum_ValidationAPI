@@ -20,5 +20,4 @@ public interface TaskService {
 
     List<TaskResponseDTO> findAbandonedTasks(Long projectId);
 
-    List<TaskResponseDTO> findAll(Long projectId);
 }

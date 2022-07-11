@@ -25,9 +25,11 @@ public class ProjectController {
         projectService.createProject(request);
     }
 
-    @GetMapping("/project/{id}")
-    public ProjectResponseDTO findAll(@PathVariable("id") Long id) {
-        return projectService.findAll(id);
+    @GetMapping("/project/{id}/task")
+    public ProjectResponseDTO findAll(@PathVariable("id") Long id,
+                                      @RequestParam int pageSize,
+                                      @RequestParam int pageNumber) {
+        return projectService.findAll(id, pageSize, pageNumber);
     }
 
 

@@ -46,11 +46,6 @@ public class TaskController {
         return taskService.findAbandonedTasks(projectId);
     }
 
-    @GetMapping("/project/{projectId}/tasks?limit=2")
-    public List<TaskResponseDTO> findAll(@PathVariable("projectId") Long projectId) {
-        return taskService.findAll(projectId);
-    }
-
 }
 
 

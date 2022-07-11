@@ -8,7 +8,7 @@ public interface ProjectService {
 
     void createProject(ProjectRequestDTO request);
 
-    ProjectResponseDTO findAll(Long Id);
+    ProjectResponseDTO findAll(Long Id, int pageSize, int pageNumber);
 
 
 
